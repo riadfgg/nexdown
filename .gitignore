@@ -1,0 +1,5 @@
+node_modules/
+backend/utils/yt-dlp.exe
+backend/utils/yt-dlp
+*.log
+error.log

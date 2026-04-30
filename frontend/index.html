@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO -->
+    <meta name="description"
+        content="NexDown — Download videos and audio from YouTube, TikTok, Instagram, Twitter, Facebook and 1000+ sites. Fast, free, no ads.">
+    <meta name="keywords"
+        content="video downloader, youtube downloader, tiktok downloader, mp4 download, mp3 download, free video downloader">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="NexDown — Universal Video Downloader">
+    <meta property="og:description"
+        content="Download videos & audio from YouTube, TikTok, Instagram and more. Fast, free, no ads.">
+    <meta property="og:type" content="website">
+    <title>NexDown — Universal Video Downloader</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Ambient glow -->
+    <div class="ambient-glow"></div>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header fade-in">
+            <h1 class="logo">Nex<span>Down</span></h1>
+            <p class="tagline">Download from YouTube, TikTok, Instagram & 1000+ sites</p>
+        </header>
+
+        <!-- URL Input -->
+        <div class="input-wrapper fade-in delay-1">
+            <div class="input-box">
+                <input type="text" id="urlInput" placeholder="Paste video link here..." autocomplete="off"
+                    spellcheck="false">
+                <button id="fetchBtn" title="Fetch Video">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Loader -->
+        <div id="loader" class="card loader-card hidden fade-in">
+            <div class="skeleton-row">
+                <div class="skeleton skeleton-thumb"></div>
+                <div class="skeleton-text">
+                    <div class="skeleton skeleton-line w-75"></div>
+                    <div class="skeleton skeleton-line w-50"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Info Card -->
+        <div id="videoInfoCard" class="card hidden fade-in">
+            <!-- Video Preview -->
+            <div class="video-preview">
+                <img id="videoThumb" src="" alt="Thumbnail">
+                <div class="video-meta">
+                    <h2 id="videoTitle">Video Title</h2>
+                    <span id="videoDuration" class="duration-badge">0:00</span>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Type Tabs -->
+            <div class="type-tabs">
+                <button id="tabVideo" class="tab active">
+                    <i class="fa-solid fa-video"></i> Video
+                </button>
+                <button id="tabAudio" class="tab">
+                    <i class="fa-solid fa-music"></i> Audio
+                </button>
+            </div>
+
+            <!-- Quality Options (Radio Buttons, NOT dropdown) -->
+            <div id="qualityList" class="quality-list">
+                <!-- Rendered by JS -->
+            </div>
+
+            <!-- Download Button -->
+            <button id="downloadBtn" class="download-btn" disabled>
+                <i class="fa-solid fa-download"></i> Download Now
+            </button>
+        </div>
+
+        <!-- Progress -->
+        <div id="progressSection" class="card hidden fade-in">
+            <div class="progress-header">
+                <i class="fa-solid fa-circle-notch fa-spin"></i>
+                <span>Downloading...</span>
+            </div>
+            <div class="progress-track">
+                <div id="progressBar" class="progress-fill"></div>
+            </div>
+            <p id="progressText" class="progress-text">Preparing download...</p>
+        </div>
+
+        <!-- Features -->
+        <div class="features fade-in delay-2">
+            <div class="feature-card">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Ultra Fast</h3>
+                <p>Direct stream tunneling for maximum speed</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-globe"></i>
+                <h3>Universal</h3>
+                <p>Works with 1000+ streaming platforms</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Secure</h3>
+                <p>No ads, no trackers, completely private</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer fade-in delay-3">
+            NexDown &copy; 2026
+        </footer>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast">
+        <i id="toastIcon" class="fa-solid fa-check-circle"></i>
+        <span id="toastMsg"></span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
