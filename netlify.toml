@@ -1,0 +1,17 @@
+[build]
+  publish = "frontend"
+  command = "mkdir -p bin && curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o bin/yt-dlp && chmod +x bin/yt-dlp"
+
+[functions]
+  directory = "netlify/functions"
+  included_files = ["bin/yt-dlp"]
+
+[[redirects]]
+  from = "/api/info"
+  to = "/.netlify/functions/info"
+  status = 200
+
+[[redirects]]
+  from = "/api/download"
+  to = "/.netlify/functions/download"
+  status = 200
